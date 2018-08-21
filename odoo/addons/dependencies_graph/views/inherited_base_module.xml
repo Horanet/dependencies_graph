@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="inherited_module_form" model="ir.ui.view">
+            <field name="name">Add dependencies graphs</field>
+            <field name="model">ir.module.module</field>
+            <field name="inherit_id" ref="base.module_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='dependencies_id']" position="after">
+                    <group>
+                        <button string="Show children dependencies graph"
+                                name="action_children_dependencies_graph"
+                                type="object" class="oe_read_only"/>
+                        <button string="Show parents dependencies graph"
+                                name="action_parents_dependencies_graph"
+                                type="object" class="oe_read_only"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

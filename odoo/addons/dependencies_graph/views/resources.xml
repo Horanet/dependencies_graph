@@ -17,8 +17,6 @@
                     <div class="row">
                         <h1 class="text-center">Dependencies Graph</h1>
                         <div id="settings" class="col-md-4">
-                            <h2 class="text-center">Settings</h2>
-
                             <div class="form-horizontal col-md-8">
                                 <div class="form-group">
                                     <label for="type" class="col-sm-2 control-label">Type</label>
@@ -27,35 +25,42 @@
                                                 onchange="window.dependencies_graph.type_changed()">
                                             <option value="module_children">Odoo Module Children</option>
                                             <option value="module_parents">Odoo Module Parents</option>
-                                            <!--<option value="module_graph">Odoo Module Graph</option>-->
-                                            <option value="js_graph">JavaScript graph</option>
+                                            <option value="model_graph">Odoo Model Graph</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" id="div_module">
                                     <label for="module" class="col-sm-2 control-label">Module</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="module"
                                                placeholder="Module"></input>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="keywords" class="col-sm-2 control-label">Keywords</label>
+                                <div class="form-group" id="div_model">
+                                    <label for="model" class="col-sm-2 control-label">Model</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="keywords"
-                                               placeholder="Keywords" disabled="true"></input>
+                                        <input type="text" class="form-control" id="model"
+                                               placeholder="Model"></input>
+                                    </div>
+                                </div>
+                                <div class="form-group" id="div_iterations">
+                                    <label for="iterations" class="col-sm-2 control-label">Iterations</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control" id="iterations"/>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-horizontal col-md-4">
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-default"
+                                        <button id="btn_generate"
+                                                type="submit" class="btn btn-default"
                                                 onclick="window.dependencies_graph.generate()">Generate
                                         </button>
                                     </div>
                                 </div>
                             </div>
+                            <input type="hidden" class="form-control" id="debug"/>
 
                         </div>
                         <div id="graph" class="col-md-8"></div>
@@ -66,7 +71,7 @@
 
         <record model="ir.actions.act_url" id="action_dependencies_graph">
             <field name="name">Dependencies Graph</field>
-            <field name="url">/dependencies_graph/graph?debug=assets</field>
+            <field name="url">/dependencies_graph/graph?debug=assets&amp;type=model_graph&amp;model=res.city&amp;iterations=2</field>
             <field name="type">ir.actions.act_url</field>
             <field name="target">self</field>
         </record>

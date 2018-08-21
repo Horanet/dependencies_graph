@@ -5,10 +5,17 @@
 
 #settings .vis-configuration-wrapper {
     height: 700px;
+    margin: 10px;
     overflow: auto;
     width: min-content;
 }
 
 #settings .vis-config-select {
     width: unset;
+}
+
+#graph {
+    width: 1200px;
+    height: 800px;
+    border: 1px solid lightgray;
 }
