@@ -26,6 +26,7 @@
     'data': [
         'views/resources.xml',
         'views/inherited_base_module.xml',
+        'views/inherited_base_model.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

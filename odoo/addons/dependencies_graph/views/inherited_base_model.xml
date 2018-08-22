@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="inherited_model_form" model="ir.ui.view">
+            <field name="name">Add dependencies graph</field>
+            <field name="model">ir.model</field>
+            <field name="inherit_id" ref="base.view_model_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='%(base.act_menu_create)d']" position="after">
+                    <button string="Show dependencies graph"
+                            name="action_dependencies_graph"
+                            type="object" class="oe_read_only"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

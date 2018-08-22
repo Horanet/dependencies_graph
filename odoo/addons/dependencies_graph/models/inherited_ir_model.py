@@ -27,20 +27,11 @@ class InheritedSale(models.Model):
 
     # region Actions
     @api.multi
-    def action_children_dependencies_graph(self):
+    def action_dependencies_graph(self):
         """Open a new tab to visualize the dependencies graph."""
         return {
             "type": "ir.actions.act_url",
-            "url": '/dependencies_graph/graph?type=module_children&module={module}'.format(module=self.name),
-            "target": "new",
-        }
-
-    @api.multi
-    def action_parents_dependencies_graph(self):
-        """Open a new tab to visualize the dependencies graph."""
-        return {
-            "type": "ir.actions.act_url",
-            "url": '/dependencies_graph/graph?type=module_parents&module={module}'.format(module=self.name),
+            "url": '/dependencies_graph/graph?type=model_graph&model={model}&iterations=2'.format(model=self.model),
             "target": "new",
         }
     # endregion
