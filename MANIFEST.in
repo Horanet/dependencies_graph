@@ -1,0 +1,1 @@
+include odoo/addons/dependencies_graph/static/lib/*.js

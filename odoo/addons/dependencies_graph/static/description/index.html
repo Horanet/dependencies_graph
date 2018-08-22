@@ -5,32 +5,37 @@
         <h3 class="oe_slogan">To get a better understanding of the dependencies among modules and models.</h3>
     </div>
     <div class="oe_row oe_spaced" style="width:100%">
-        <div class="oe_span6">
+        <div>
             <p class="oe_mt32">
                 This tool is aimed to help software developers to get a better understanding of the dependencies among modules and models in an Odoo application.
 
                 We use the library [vis.js](http://visjs.org/) to render the graph.
-
-                ## Types of graph
-
-                1. Odoo Module Children
-
-                    Given an Odoo module it shows every module that depends of him directly or indirectly, installed or not.
-
-                2. Odoo Module Parents
-
-                    Given an Odoo module it shows every module in which the module depends on. These are every modules that needs to be installed before him.
-
-                3. Odoo Model Graph
-
-                    Given an Odoo model it shows models relations depending on recursive iteration counter.
             </p>
-            <br/>
+
+            <h6>Types of graph</h6>
+            <ol>
+                <li>Odoo Module Children</li>
+                <p>Given an Odoo module it shows every module that depends of him directly or indirectly, installed or not.</p>
+
+                <li>Odoo Module Parents</li>
+                <p>Given an Odoo module it shows every module in which the module depends on. These are every modules that needs to be installed before him.</p>
+
+                <li>Odoo Model Graph</li>
+                <p>Given an Odoo model it shows models relations depending on recursive iteration counter.</p>
+            </ol>
+
+
             <h6>Contributors:</h6>
             <ul>
                 <li><a href="https://github.com/muralikrishnareddy">Adrian Chang</a></li>
                 <li><a href="https://github.com/alixcasari">Alix Casari</a></li>
             </ul>
+        </div>
+        <div class="oe_row_img oe_centered">
+            <img alt="Dependencies Graph example"
+                 src="https://cdn.horanet.com/horanet_go/modules/dependencies_graph/dependencies_graph_exemple.gif"
+                 class="oe_picture oe_screenshot"
+                 >
         </div>
     </div>
 </section>

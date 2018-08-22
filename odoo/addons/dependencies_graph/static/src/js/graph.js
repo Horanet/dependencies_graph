@@ -48,6 +48,8 @@ odoo.define('dependencies_graph.graph', function (require) {
         var model = $('#model').val();
         var number = $('#iterations').val();
 
+        $('#settings').empty();
+
         window.dependencies_graph[type](module, model, number).done(function (network) {
             console.log('generated', module);
         });
@@ -181,8 +183,6 @@ odoo.define('dependencies_graph.graph', function (require) {
                         label: deps[m]['label'],
                         font: {'face': 'monospace', 'align': 'left', 'multi': true}
                     });
-                    console.log(m)
-                    console.log(relations)
                     _.each(relations, function (p) {
                         if (!nodes.get(p)) {
                             nodes.update({
@@ -222,8 +222,6 @@ odoo.define('dependencies_graph.graph', function (require) {
             // On ajoute une fonction sur les noeuds permettant d'en enlever
             nodes.deleteNodeAndEdges = function(node_id) {
                 try {
-                    console.log('deleting' + node_id);
-
                     this.remove({id: node_id});
 
                     edges.forEach(function(edge){
