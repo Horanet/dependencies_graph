@@ -20,4 +20,4 @@ We use the library [vis.js](http://visjs.org/) to render the graph.
 
 ## Installation command
 
-`pip install git+https://github.com/Horanet/dependencies_graph.git#egg=odoo10_addon_dependencies_graph`
+`pip install git+https://github.com/Horanet/dependencies_graph.git@10.0#egg=odoo10_addon_dependencies_graph`
