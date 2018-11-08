@@ -23,7 +23,7 @@ class DependenciesGraph(http.Controller):
             graph = graph[module_name]
 
         deps = {}
-        for key, value in graph.iteritems():
+        for key, value in graph.items():
             deps[key] = {
                 'depends': value.info['depends'],
                 'state': value.state,
